@@ -1,0 +1,2338 @@
+import telebot
+from telebot import types, TeleBot
+
+TOKEN = '<1481483394:AAHR4bOh7bxmDb_h-NtpmTdGO7CCGKzXI5o>'
+bot: TeleBot = telebot.TeleBot("1481483394:AAHR4bOh7bxmDb_h-NtpmTdGO7CCGKzXI5o")
+
+
+@bot.message_handler(commands=['start'])
+def welcome(message):
+    sti = open('C:\TelegramBot\sticker.webp', 'rb')
+    bot.send_sticker(message.chat.id, sti)
+
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = types.KeyboardButton("Let's start🔥")
+    markup.add(item1)
+    bot.send_message(message.chat.id, "Welcome! <i>{0.first_name}</i>!\n"
+                                      " \n"
+                                      "I'm a <b>{1.first_name}</b> bot with "
+                                      "extensive knowledge of fitness and healthy eating.\n"
+                                      " \n"
+                                      "I can help you create a personalized fitness program and nutrition "
+                                      "program.\n ".format(
+        message.from_user, bot.get_me()), parse_mode='html', reply_markup=markup)
+
+
+@bot.message_handler(content_types=['text'])
+def lalala(message):
+    if message.chat.type == 'private':
+        if message.text == 'Female👩🏼':
+            markup_reply_female = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_female = types.KeyboardButton(text='16-24')
+            button2_female = types.KeyboardButton(text='24-32')
+            button3_female = types.KeyboardButton(text='32-40')
+            button4_female = types.KeyboardButton(text='40+')
+            markup_reply_female.add(button1_female, button2_female, button3_female, button4_female)
+            bot.send_message(message.chat.id, 'How old are you?', reply_markup=markup_reply_female)
+        elif message.text == 'Male👦':
+            markup_reply_male = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_male = types.KeyboardButton(text='16-24')
+            button2_male = types.KeyboardButton(text='24-32')
+            button3_male = types.KeyboardButton(text='32-40')
+            button4_male = types.KeyboardButton(text='40+')
+            markup_reply_male.add(button1_male, button2_male, button3_male, button4_male)
+            bot.send_message(message.chat.id, 'How old are you?', reply_markup=markup_reply_male)
+        if message.text == "Let's start🔥":
+            markup_wel = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            item1_wel = types.KeyboardButton(text="Female👩🏼")
+            item2_wel = types.KeyboardButton(text="Male👦")
+            markup_wel.add(item1_wel, item2_wel)
+            bot.send_message(message.chat.id, 'What is your gender?', reply_markup=markup_wel)
+        elif message.text=="⬅️Back":
+            sti = open('C:\TelegramBot\sticker2.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            markup_reply_goal = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_goal = types.KeyboardButton(text='Gain mass🏋️')
+            button2_goal = types.KeyboardButton(text='Lose weigth🚴')
+            button3_goal = types.KeyboardButton(text='Keep feet🧘')
+            markup_reply_goal.add(button1_goal, button2_goal, button3_goal)
+            bot.send_message(message.chat.id, 'What is your goal?', reply_markup=markup_reply_goal)
+
+
+        if message.text == '16-24':
+            markup_reply_heigth = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_heigth = types.KeyboardButton(text='150-160 cm')
+            button2_heigth = types.KeyboardButton(text='160-170 cm')
+            button3_heigth = types.KeyboardButton(text='170-180 cm')
+            button4_heigth = types.KeyboardButton(text='180-190 cm')
+            button5_heigth = types.KeyboardButton(text='190-200 cm')
+            markup_reply_heigth.add(button1_heigth, button2_heigth, button3_heigth, button4_heigth, button5_heigth)
+            bot.send_message(message.chat.id, 'What is your heigth?', reply_markup=markup_reply_heigth)
+
+        if message.text == '24-32':
+            markup_reply_heigth = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_heigth = types.KeyboardButton(text='150-160 cm')
+            button2_heigth = types.KeyboardButton(text='160-170 cm')
+            button3_heigth = types.KeyboardButton(text='170-180 cm')
+            button4_heigth = types.KeyboardButton(text='180-190 cm')
+            button5_heigth = types.KeyboardButton(text='190-200 cm')
+            markup_reply_heigth.add(button1_heigth, button2_heigth, button3_heigth, button4_heigth, button5_heigth)
+            bot.send_message(message.chat.id, 'What is your heigth?', reply_markup=markup_reply_heigth)
+
+
+        if message.text == '32-40':
+            markup_reply_heigth = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_heigth = types.KeyboardButton(text='150-160 cm')
+            button2_heigth = types.KeyboardButton(text='160-170 cm')
+            button3_heigth = types.KeyboardButton(text='170-180 cm')
+            button4_heigth = types.KeyboardButton(text='180-190 cm')
+            button5_heigth = types.KeyboardButton(text='190-200 cm')
+            markup_reply_heigth.add(button1_heigth, button2_heigth, button3_heigth, button4_heigth, button5_heigth)
+            bot.send_message(message.chat.id, 'What is your heigth?', reply_markup=markup_reply_heigth)
+
+        if message.text == '40+':
+            markup_reply_heigth = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_heigth = types.KeyboardButton(text='150-160 cm')
+            button2_heigth = types.KeyboardButton(text='160-170 cm')
+            button3_heigth = types.KeyboardButton(text='170-180 cm')
+            button4_heigth = types.KeyboardButton(text='180-190 cm')
+            button5_heigth = types.KeyboardButton(text='190-200 cm')
+            markup_reply_heigth.add(button1_heigth, button2_heigth, button3_heigth, button4_heigth, button5_heigth)
+            bot.send_message(message.chat.id, 'What is your heigth?', reply_markup=markup_reply_heigth)
+
+        if message.text == '150-160 cm':
+            sti = open('C:\TelegramBot\sticker2.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            markup_reply_goal = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_goal = types.KeyboardButton(text='Gain mass🏋️')
+            button2_goal = types.KeyboardButton(text='Lose weigth🚴')
+            button3_goal = types.KeyboardButton(text='Keep feet🧘')
+            markup_reply_goal.add(button1_goal, button2_goal, button3_goal)
+            bot.send_message(message.chat.id, 'What is your goal?', reply_markup=markup_reply_goal)
+        if message.text == '160-170 cm':
+            sti = open('C:\TelegramBot\sticker2.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            markup_reply_goal = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_goal = types.KeyboardButton(text='Gain mass🏋️')
+            button2_goal = types.KeyboardButton(text='Lose weigth🚴')
+            button3_goal = types.KeyboardButton(text='Keep feet🧘')
+            markup_reply_goal.add(button1_goal, button2_goal, button3_goal)
+            bot.send_message(message.chat.id, 'What is your goal?', reply_markup=markup_reply_goal)
+        if message.text == '170-180 cm':
+            sti = open('C:\TelegramBot\sticker2.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            markup_reply_goal = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_goal = types.KeyboardButton(text='Gain mass🏋️')
+            button2_goal = types.KeyboardButton(text='Lose weigth🚴')
+            button3_goal = types.KeyboardButton(text='Keep feet🧘')
+            markup_reply_goal.add(button1_goal, button2_goal, button3_goal)
+            bot.send_message(message.chat.id, 'What is your goal?', reply_markup=markup_reply_goal)
+        if message.text == '180-190 cm':
+            sti = open('C:\TelegramBot\sticker2.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            markup_reply_goal = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_goal = types.KeyboardButton(text='Gain mass🏋️')
+            button2_goal = types.KeyboardButton(text='Lose weigth🚴')
+            button3_goal = types.KeyboardButton(text='Keep feet🧘')
+            markup_reply_goal.add(button1_goal, button2_goal, button3_goal)
+            bot.send_message(message.chat.id, 'What is your goal?', reply_markup=markup_reply_goal)
+        if message.text == '190-200 cm':
+            sti = open('C:\TelegramBot\sticker2.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            markup_reply_goal = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_goal = types.KeyboardButton(text='Gain mass🏋️')
+            button2_goal = types.KeyboardButton(text='Lose weigth🚴')
+            button3_goal = types.KeyboardButton(text='Keep feet🧘')
+            markup_reply_goal.add(button1_goal, button2_goal, button3_goal)
+            bot.send_message(message.chat.id, 'What is your goal?', reply_markup=markup_reply_goal)
+
+
+###
+        if message.text == 'Gain mass🏋️':
+            markup_reply_p4 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_p4 = types.KeyboardButton(text='40-50 kg (G)')
+            button2_p4 = types.KeyboardButton(text='50-60 kg (G)')
+            button3_p4 = types.KeyboardButton(text='60-80 kg (G)')
+            button4_p4 = types.KeyboardButton(text='80-95 kg (G)')
+            button5_p4 = types.KeyboardButton(text='95+ kg (G)')
+            markup_reply_p4.add(button1_p4, button2_p4, button3_p4, button4_p4, button5_p4)
+            bot.send_message(message.chat.id, 'What is your weight?', reply_markup=markup_reply_p4)
+
+        if message.text == '40-50 kg (G)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\gain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 60-75 gramm🥩\n"
+                                              "Сarbohydrates: 315-320 gramm 🍚\n"
+                                              "Сalories: 1500-1600 Kсal 🥗\n"
+                                              "Water: 1.4-1.5 L💧\n"
+                                              " \n")
+
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all, button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?", reply_markup=markup_reply_all)
+
+        if message.text == '50-60 kg (G)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\gain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 75-90 gramm🥩\n"
+                                              "Сarbohydrates: 320-340 gramm 🍚\n"
+                                              "Сalories: 1600-1800 Kсal 🥗\n"
+                                              "Water: 1.6-1.7 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '60-80 kg (G)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\gain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 95-110 gramm🥩\n"
+                                              "Сarbohydrates: 380-430 gramm 🍚\n"
+                                              "Сalories: 1800-2300 Kсal 🥗\n"
+                                              "Water: 1.8-2.3 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '80-95 kg (G)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\gain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 120-140 gramm🥩\n"
+                                              "Сarbohydrates: 430-460 gramm 🍚\n"
+                                              "Сalories: 2300-2600 Kсal 🥗\n"
+                                              "Water: 2.5-3.0 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '95+ kg (G)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\gain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 170 gramm🥩\n"
+                                              "Сarbohydrates: 500 gramm 🍚\n"
+                                              "Сalories: 3200 Kсal 🥗\n"
+                                              "Water: 3.2 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+
+        #no allergy gain
+        if message.text == 'No allergy (G)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (N)')
+            button2_all = types.KeyboardButton(text='☕ (N)')
+            button3_all = types.KeyboardButton(text='🍲 (N)')
+            button4_all = types.KeyboardButton(text='🍶 (N)')
+            button5_all = types.KeyboardButton(text='🍗 (N)')
+            button6_all = types.KeyboardButton(text='🍏 (N)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (N)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "1. Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                                              "2. Eggs, 3 pcs. (boiled)\n"
+                                              "3. 30 grams of cheese with bread")
+        if message.text == '☕ (N)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (N)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                              "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (N)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (N)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (N)' :
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+        if message.text == '🥚Eggs (G)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "Choose the menu!\n"
+                                              "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack\n"
+                                              "3.🍲 Lunch\n"
+                                              "4.🍶 Afternoon snack\n"
+                                              "5.🍗 Dinner\n"
+                                              "6.🍏 Before bed")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (E)')
+            button2_all = types.KeyboardButton(text='☕ (E)')
+            button3_all = types.KeyboardButton(text='🍲 (E)')
+            button4_all = types.KeyboardButton(text='🍶 (E)')
+            button5_all = types.KeyboardButton(text='🍗 (E)')
+            button6_all = types.KeyboardButton(text='🍏 (E)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (E)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (E)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (E)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (E)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (E)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (E)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+
+        if message.text == '🍯Honey (G)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (H)')
+            button2_all = types.KeyboardButton(text='☕ (H)')
+            button3_all = types.KeyboardButton(text='🍲 (H)')
+            button4_all = types.KeyboardButton(text='🍶 (H)')
+            button5_all = types.KeyboardButton(text='🍗 (H)')
+            button6_all = types.KeyboardButton(text='🍏 (H)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (H)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (H)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (H)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (H)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (H)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (H)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🍭Sugar (G)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (S)')
+            button2_all = types.KeyboardButton(text='☕ (S)')
+            button3_all = types.KeyboardButton(text='🍲 (S)')
+            button4_all = types.KeyboardButton(text='🍶 (S)')
+            button5_all = types.KeyboardButton(text='🍗 (S)')
+            button6_all = types.KeyboardButton(text='🍏 (S)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (S)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (S)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (S)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (S)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (S)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (S)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🍋Сitrus (C)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (C)')
+            button2_all = types.KeyboardButton(text='☕ (C)')
+            button3_all = types.KeyboardButton(text='🍲 (C)')
+            button4_all = types.KeyboardButton(text='🍶 (C)')
+            button5_all = types.KeyboardButton(text='🍗 (C)')
+            button6_all = types.KeyboardButton(text='🍏 (C)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (C)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (C)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (C)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (C)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (C)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (C)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🥛Dairy products (G)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (D)')
+            button2_all = types.KeyboardButton(text='☕ (D)')
+            button3_all = types.KeyboardButton(text='🍲 (D)')
+            button4_all = types.KeyboardButton(text='🍶 (D)')
+            button5_all = types.KeyboardButton(text='🍗 (D)')
+            button6_all = types.KeyboardButton(text='🍏 (D)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (D)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of peanut butter with bread")
+        if message.text == '☕ (D)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (D)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (D)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "ruit juice 200 grams and fruits\n"
+                             " \n"
+                             "Option 2\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (D)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (D)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Soe milk and banana\n")
+
+
+        if message.text == '🍟Fried meals (G)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (F)')
+            button2_all = types.KeyboardButton(text='☕ (F)')
+            button3_all = types.KeyboardButton(text='🍲 (F)')
+            button4_all = types.KeyboardButton(text='🍶 (F)')
+            button5_all = types.KeyboardButton(text='🍗 (F)')
+            button6_all = types.KeyboardButton(text='🍏 (F)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (F)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (F)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (F)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (F)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (F)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (F)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+###
+        if message.text == 'Lose weigth🚴':
+            markup_reply_p4 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_p4 = types.KeyboardButton(text='40-50 kg (L)')
+            button2_p4 = types.KeyboardButton(text='50-60 kg (L)')
+            button3_p4 = types.KeyboardButton(text='60-80 kg (L)')
+            button4_p4 = types.KeyboardButton(text='80-95 kg (L)')
+            button5_p4 = types.KeyboardButton(text='95+ kg (L)')
+            markup_reply_p4.add(button1_p4, button2_p4, button3_p4, button4_p4, button5_p4)
+            bot.send_message(message.chat.id, 'What is your weight?', reply_markup=markup_reply_p4)
+
+        if message.text == '40-50 kg (L)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\LowCa1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 92-96 gramm🥩\n"
+                                              "Сarbohydrates: 167-185 gramm 🍚\n"
+                                              "Сalories: 1400-1600 Kсal 🥗\n"
+                                              "Water: 1.4-1.5 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+
+        if message.text == '50-60 kg (L)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\LowCa1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 115-120 gramm🥩\n"
+                                              "Сarbohydrates: 192-200 gramm 🍚\n"
+                                              "Сalories: 1500-1700 Kсal 🥗\n"
+                                              "Water: 1.6-1.7 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '60-80 kg (L)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\LowCa1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 130-140 gramm🥩\n"
+                                              "Сarbohydrates: 210-230 gramm 🍚\n"
+                                              "Сalories: 1700-2100 Kсal 🥗\n"
+                                              "Water: 1.8-2.3 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '80-95 kg (L)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\LowCa1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 150-164 gramm🥩\n"
+                                              "Сarbohydrates: 224-236 gramm 🍚\n"
+                                              "Сalories: 2100-2300 Kсal 🥗\n"
+                                              "Water: 2.5-3.0 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '95+ kg (L)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\LowCa1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 170-210 gramm🥩\n"
+                                              "Сarbohydrates: 236 gramm 🍚\n"
+                                              "Сalories: 2200-2400 Kсal 🥗\n"
+                                              "Water: 3.2 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+
+        if message.text == 'No allergy (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (NL)')
+            button2_all = types.KeyboardButton(text='☕ (NL)')
+            button3_all = types.KeyboardButton(text='🍲 (NL)')
+            button4_all = types.KeyboardButton(text='🍶 (NL)')
+            button5_all = types.KeyboardButton(text='🍗 (NL)')
+            button6_all = types.KeyboardButton(text='🍏 (NL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (NL)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "1. Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             "2. Eggs, 3 pcs. (boiled)\n"
+                             "3. 30 grams of cheese with bread")
+        if message.text == '☕ (NL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (NL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (NL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (NL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (NL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+        if message.text == '🥚Eggs (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "Choose the menu!\n"
+                                              "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack\n"
+                                              "3.🍲 Lunch\n"
+                                              "4.🍶 Afternoon snack\n"
+                                              "5.🍗 Dinner\n"
+                                              "6.🍏 Before bed")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (EL)')
+            button2_all = types.KeyboardButton(text='☕ (EL)')
+            button3_all = types.KeyboardButton(text='🍲 (EL)')
+            button4_all = types.KeyboardButton(text='🍶 (EL)')
+            button5_all = types.KeyboardButton(text='🍗 (EL)')
+            button6_all = types.KeyboardButton(text='🍏 (EL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (EL)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (EL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (EL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (EL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (EL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (EL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+        if message.text == '🍯Honey (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (HL)')
+            button2_all = types.KeyboardButton(text='☕ (HL)')
+            button3_all = types.KeyboardButton(text='🍲 (HL)')
+            button4_all = types.KeyboardButton(text='🍶 (HL)')
+            button5_all = types.KeyboardButton(text='🍗 (HL)')
+            button6_all = types.KeyboardButton(text='🍏 (HL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (H)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (HL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (HL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (HL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (HL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (HL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🍭Sugar (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (SL)')
+            button2_all = types.KeyboardButton(text='☕ (SL)')
+            button3_all = types.KeyboardButton(text='🍲 (SL)')
+            button4_all = types.KeyboardButton(text='🍶 (SL)')
+            button5_all = types.KeyboardButton(text='🍗 (SL)')
+            button6_all = types.KeyboardButton(text='🍏 (SL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (SL)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (SL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (SL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (SL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (SL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (SL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🍋Сitrus (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (CL)')
+            button2_all = types.KeyboardButton(text='☕ (CL)')
+            button3_all = types.KeyboardButton(text='🍲 (CL)')
+            button4_all = types.KeyboardButton(text='🍶 (CL)')
+            button5_all = types.KeyboardButton(text='🍗 (CL)')
+            button6_all = types.KeyboardButton(text='🍏 (CL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (CL)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (CL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (CL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (CL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (CL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (CL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🥛Dairy products (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (DL)')
+            button2_all = types.KeyboardButton(text='☕ (DL)')
+            button3_all = types.KeyboardButton(text='🍲 (DL)')
+            button4_all = types.KeyboardButton(text='🍶 (DL)')
+            button5_all = types.KeyboardButton(text='🍗 (DL)')
+            button6_all = types.KeyboardButton(text='🍏 (DL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (DL)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of peanut butter with bread")
+        if message.text == '☕ (DL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (DL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (DL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "ruit juice 200 grams and fruits\n"
+                             " \n"
+                             "Option 2\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (DL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (DL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Soe milk and banana\n")
+
+        if message.text == '🍟Fried meals (L)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (FL)')
+            button2_all = types.KeyboardButton(text='☕ (FL)')
+            button3_all = types.KeyboardButton(text='🍲 (FL)')
+            button4_all = types.KeyboardButton(text='🍶 (FL)')
+            button5_all = types.KeyboardButton(text='🍗 (FL)')
+            button6_all = types.KeyboardButton(text='🍏 (FL)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (FL)':
+            photo = open('C:\TelegramBot\pic1.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (FL)':
+            photo = open('C:\TelegramBot\pic2.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (FL)':
+            photo = open('C:\TelegramBot\pic3.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (FL)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (FL)':
+            photo = open('C:\TelegramBot\pic5.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (FL)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+###
+        if message.text == 'Keep feet🧘':
+            markup_reply_p4 = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_p4 = types.KeyboardButton(text='40-50 kg (K)')
+            button2_p4 = types.KeyboardButton(text='50-60 kg (K)')
+            button3_p4 = types.KeyboardButton(text='60-80 kg (K)')
+            button4_p4 = types.KeyboardButton(text='80-95 kg (K)')
+            button5_p4 = types.KeyboardButton(text='95+ kg (K)')
+            markup_reply_p4.add(button1_p4, button2_p4, button3_p4, button4_p4, button5_p4)
+            bot.send_message(message.chat.id, 'What is your weight?', reply_markup=markup_reply_p4)
+
+        if message.text == '40-50 kg (K)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\maintain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 110-120 gramm🥩\n"
+                                              "Сarbohydrates: 180-200 gramm 🍚\n"
+                                              "Сalories: 1600-1750 Kсal 🥗\n"
+                                              "Water: 1.4-1.5 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+
+        if message.text == '50-60 kg (K)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\maintain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 130-150 gramm🥩\n"
+                                              "Сarbohydrates: 320-340 gramm 🍚\n"
+                                              "Сalories: 2100-2200 Kсal 🥗\n"
+                                              "Water: 1.6-1.7 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '60-80 kg (K)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\maintain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 160-180 gramm🥩\n"
+                                              "Сarbohydrates: 250-285 gramm 🍚\n"
+                                              "Сalories: 2400-2600 Kсal 🥗\n"
+                                              "Water: 1.8-2.3 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '80-95 kg (K)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!")
+            photo = open('C:\TelegramBot\maintain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 190-200 gramm🥩\n"
+                                              "Сarbohydrates: 290-310 gramm 🍚\n"
+                                              "Сalories: 2600-2900 Kсal 🥗\n"
+                                              "Water: 2.5-3.0 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+        if message.text == '95+ kg (K)':
+            bot.send_message(message.chat.id, "Here you can see the proportions of macronutrients!") 
+            photo = open('C:\TelegramBot\maintain.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id, "During the day you have to eat:\n"
+                                              "Protein: 200 gramm🥩\n"
+                                              "Сarbohydrates: 310 gramm 🍚\n"
+                                              "Сalories: 3200 Kсal 🥗\n"
+                                              "Water: 3.2 L💧\n"
+                                              " \n")
+
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🍯Honey (G)')
+            button2_all = types.KeyboardButton(text='🥚Eggs (G)')
+            button3_all = types.KeyboardButton(text='🍭Sugar (G)')
+            button4_all = types.KeyboardButton(text='🍋Сitrus (G)')
+            button5_all = types.KeyboardButton(text='🥛Dairy products (G)')
+            button6_all = types.KeyboardButton(text='🍟Fried meals (G)')
+            button7_all = types.KeyboardButton(text='No allergy (G)')
+            button8_all = types.KeyboardButton(text='⬅️Back')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all,
+                                 button7_all, button8_all)
+            sti = open('C:\TelegramBot\sticker3.webp', 'rb')
+            bot.send_sticker(message.chat.id, sti)
+            bot.send_message(message.chat.id, "Okeey,let's create a diet plan!\n"
+                                              "But before, let me ask you a question. "
+                                              "Do you have allergy for one of these ingredients?",
+                             reply_markup=markup_reply_all)
+            # no allergy gain
+        if message.text == 'No allergy (K)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (NK)')
+            button2_all = types.KeyboardButton(text='☕ (NK)')
+            button3_all = types.KeyboardButton(text='🍲 (NK)')
+            button4_all = types.KeyboardButton(text='🍶 (NK)')
+            button5_all = types.KeyboardButton(text='🍗 (NK)')
+            button6_all = types.KeyboardButton(text='🍏 (NK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (NK)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "1. Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             "2. Eggs, 3 pcs. (boiled)\n"
+                             "3. 30 grams of cheese with bread")
+        if message.text == '☕ (NK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (NK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (NK)':
+            photo = open('C:\TelegramBot\pic.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (NK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (NK)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+        if message.text == '🥚Eggs (K)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "Choose the menu!\n"
+                                              "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack\n"
+                                              "3.🍲 Lunch\n"
+                                              "4.🍶 Afternoon snack\n"
+                                              "5.🍗 Dinner\n"
+                                              "6.🍏 Before bed")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (EK)')
+            button2_all = types.KeyboardButton(text='☕ (EK)')
+            button3_all = types.KeyboardButton(text='🍲 (EK)')
+            button4_all = types.KeyboardButton(text='🍶 (EK)')
+            button5_all = types.KeyboardButton(text='🍗 (EK)')
+            button6_all = types.KeyboardButton(text='🍏 (EK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (EK)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (EK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (EK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (EK)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (EK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (EK)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Fruits\n")
+
+        if message.text == '🍯Honey (K)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (HK)')
+            button2_all = types.KeyboardButton(text='☕ (HK)')
+            button3_all = types.KeyboardButton(text='🍲 (HK)')
+            button4_all = types.KeyboardButton(text='🍶 (HK)')
+            button5_all = types.KeyboardButton(text='🍗 (HK)')
+            button6_all = types.KeyboardButton(text='🍏 (HK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (HK)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (HK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (HK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (HK)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (HK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (H)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🍭Sugar (K)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (SK)')
+            button2_all = types.KeyboardButton(text='☕ (SK)')
+            button3_all = types.KeyboardButton(text='🍲 (SK)')
+            button4_all = types.KeyboardButton(text='🍶 (SK)')
+            button5_all = types.KeyboardButton(text='🍗 (SK)')
+            button6_all = types.KeyboardButton(text='🍏 (SK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (S)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (SK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (SK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (SK)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (SK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (SK)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🍋Сitrus (K)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (CK)')
+            button2_all = types.KeyboardButton(text='☕ (CK)')
+            button3_all = types.KeyboardButton(text='🍲 (CK)')
+            button4_all = types.KeyboardButton(text='🍶 (CK)')
+            button5_all = types.KeyboardButton(text='🍗 (CK)')
+            button6_all = types.KeyboardButton(text='🍏 (CK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (CK)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (CK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (CK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (CK)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (CK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (CK)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+        if message.text == '🥛Dairy products (K)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (DK)')
+            button2_all = types.KeyboardButton(text='☕ (DK)')
+            button3_all = types.KeyboardButton(text='🍲 (DK)')
+            button4_all = types.KeyboardButton(text='🍶 (DK)')
+            button5_all = types.KeyboardButton(text='🍗 (DK)')
+            button6_all = types.KeyboardButton(text='🍏 (DK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (DK)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of peanut butter with bread")
+        if message.text == '☕ (DK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (DK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (DK)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "ruit juice 200 grams and fruits\n"
+                             " \n"
+                             "Option 2\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (DK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (DK)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Soe milk and banana\n")
+
+        if message.text == '🍟Fried meals (FK)':
+            bot.send_message(message.chat.id, "Thanks! Your diet is ready!")
+            bot.send_message(message.chat.id, "1.🥚 Breakfast \n"
+                                              "2.☕️ Snack \n"
+                                              "3.🍲 Lunch \n"
+                                              "4.🍶 Afternoon snack(N)\n"
+                                              "5.🍗 Dinner \n"
+                                              "6.🍏 Before bed ")
+            markup_reply_all = types.ReplyKeyboardMarkup(resize_keyboard=True)
+            button1_all = types.KeyboardButton(text='🥚 (FK)')
+            button2_all = types.KeyboardButton(text='☕ (FK)')
+            button3_all = types.KeyboardButton(text='🍲 (FK)')
+            button4_all = types.KeyboardButton(text='🍶 (FK)')
+            button5_all = types.KeyboardButton(text='🍗 (FK)')
+            button6_all = types.KeyboardButton(text='🍏 (FK)')
+            markup_reply_all.add(button1_all, button2_all, button3_all, button4_all, button5_all, button6_all)
+            bot.send_message(message.chat.id, 'Choose the menu!', reply_markup=markup_reply_all)
+        if message.text == '🥚 (FK)':
+            photo = open('C:\TelegramBot\pic11.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Groats (oat, buckwheat, pearl barley, millet, corn at choice) 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "30 grams of cheese with bread")
+        if message.text == '☕ (FK)':
+            photo = open('C:\TelegramBot\pic12.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍲 (FK)':
+            photo = open('C:\TelegramBot\pic13.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             " Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍶 (FK)':
+            photo = open('C:\TelegramBot\pic4.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Sour yogurt or kefir 200 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Cottage cheese 200 grams with any berries 60 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "1. Vegetable salad 200 grams\n"
+                             "2. Fish or poultry 100 grams\n")
+        if message.text == '🍗 (FK)':
+            photo = open('C:\TelegramBot\pic15.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Option 1\n"
+                             "Buckwheat / Durum pasta / Brown or wild rice 60 grams\n"
+                             " \n"
+                             "Option 2\n"
+                             "Vegetables 200 grams\n"
+                             " \n"
+                             "Option 3\n"
+                             "Fish / Meat / Poultry / Seafood 200 grams\n")
+        if message.text == '🍏 (FK)':
+            photo = open('C:\TelegramBot\pic6.jpg', 'rb')
+            bot.send_photo(message.chat.id, photo)
+            bot.send_message(message.chat.id,
+                             "Before bed🍏"
+                             " \n"
+                             "Sour yogurt or kefir 200 grams\n")
+
+
+#@bot.callback_query_handler(func=lambda call: True)
+#def callback_inline(call):
+
+
+# RUN
+bot.polling(none_stop=True, interval=0)
+
